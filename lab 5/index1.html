@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veer Ji Malai Chaap Wale- Indian & Indo-Chinese Street Food Express</title>
+    <!-- Google Fonts for Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Veer Ji Malai Chaap Wale</div>
+            
+            <!-- Desktop Navigation Links -->
+            <nav class="desktop-nav">
+                <a href="#categories">Cuisines</a>
+                <a href="#restaurants">Dishes</a>
+                <a href="#promos">Offers</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#download">App</a>
+            </nav>
+
+            <div class="auth-buttons-desktop">
+                <button class="login-btn">Login</button>
+                <button class="signup-btn">Sign Up</button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation (Hidden on MD+ screens via CSS) -->
+        <nav class="mobile-nav">
+            <a href="#categories" class="mobile-nav-item">Cuisines</a>
+            <a href="#restaurants" class="mobile-nav-item">Dishes</a>
+            <a href="#promos" class="mobile-nav-item">Offers</a>
+            <a href="#testimonials" class="mobile-nav-item">Testimonials</a>
+            <a href="#download" class="mobile-nav-item">App</a>
+            <hr style="border-color: #e5e7eb;">
+            <button class="mobile-nav-btn login-btn">Login</button>
+            <button class="mobile-nav-btn signup-btn">Sign Up</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero-section">
+            <div class="container hero-grid">
+                
+                <!-- Hero Content -->
+                <div class="hero-content">
+                    <h1 style="font-weight: 800;">
+                        Authentic Street Flavors, <span style="color: var(--foodie-primary);">delivered hot.</span>
+                    </h1>
+                    <p>
+                        Get the best of Indian fast food—from Tandoori Chaap to delicious Momos—delivered fresh and fast to satisfy your cravings.
+                    </p>
+                    <button class="cta-btn">
+                        Order Now
+                    </button>
+                </div>
+                
+                <!-- Hero Image (Stock Photo: Indian Street Food / Chaap) -->
+                <div class="hero-image">
+                    <img 
+                        src="https://images.unsplash.com/photo-1714611626323-5ba6204453be?q=80&w=965&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="Delicious Tandoori Soya Chaap" 
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Bar -->
+        <div class="search-bar-wrapper">
+            <form class="search-form">
+                <!-- Location input -->
+                <input type="text" placeholder="Enter your delivery location..." aria-label="Location" style="flex-grow: 1;">
+                <!-- Food category filter -->
+                <select aria-label="Food Category">
+                    <option value="">All Street Food</option>
+                    <option>Chaap & Rolls</option>
+                    <option>Chole Bhature</option>
+                    <option>Pav Bhaji & Vada Pav</option>
+                    <option>Momos (Steamed/Fried)</option>
+                    <option>Indo-Chinese Noodles</option>
+                </select>
+                <!-- Search button -->
+                <button type="submit" class="search-btn">
+                    Find Food
+                </button>
+            </form>
+        </div>
+
+        <!-- Category Grid -->
+        <section class="category-section" id="categories">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin-bottom: 3rem;">Explore Street Food <span style="color: var(--foodie-primary);">Categories</span></h2>
+                <div class="category-grid">
+                    <!-- Updated Categories with Emojis -->
+                    <div class="category-card">
+                        <span class="icon-emoji">🍢</span>
+                        <span>Chaap</span>
+                    </div>
+                    <div class="category-card">
+                        <span class="icon-emoji">🥞</span>
+                        <span>Chole Bhature</span>
+                    </div>
+                    <div class="category-card">
+                        <span class="icon-emoji">🍱</span>
+                        <span>Pav Bhaji</span>
+                    </div>
+                    <div class="category-card">
+                        <span class="icon-emoji">🍥</span>
+                        <span>Momos</span>
+                    </div>
+                    <div class="category-card">
+                        <span class="icon-emoji">🥡</span>
+                        <span>Noodles</span>
+                    </div>
+                    <div class="category-card">
+                        <span class="icon-emoji">🍝</span>
+                        <span>Manchurian</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Restaurants -->
+        <section class="restaurant-section" id="restaurants">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin-bottom: 3rem;">Featured <span style="color: var(--foodie-primary);">Street Delights</span></h2>
+                <div class="restaurant-grid">
+                    
+                    <!-- Dish Card 1: Chaap -->
+                    <div class="restaurant-card">
+                        <img src="https://images.unsplash.com/photo-1714611626308-0e59377986e3?q=80&w=1952&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                            alt="Malahi Soya Chaap">
+                        <div class="restaurant-info">
+                            <h3>Malai Chaap Delight</h3>
+                            <div class="tags">Soya, Creamy, Tandoori</div>
+                            <div class="rating">
+                                <span>★</span> 4.9
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dish Card 2: Chole Bhature -->
+                    <div class="restaurant-card">
+                        <img src="https://lh5.googleusercontent.com/proxy/MRM9rtKGvv9Nsc5CLx4soi5Qh8ojzjw25zmYUjWMHv8dKnV6bRt6w2RJIpRKappin9EP5zCh-bhLSFhjNUmsqXEeC4igJ_Glf5glffRRtG4UAso2Hw" 
+                            alt="Chole Bhature Platter">
+                        <div class="restaurant-info">
+                            <h3>Pindi Chole & Bhature</h3>
+                            <div class="tags">Punjabi, Spicy Chickpeas</div>
+                            <div class="rating">
+                                <span>★</span> 4.7
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dish Card 3: Pav Bhaji -->
+                    <div class="restaurant-card">
+                        <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?q=80&w=1021&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                            alt="Mumbai Pav Bhaji">
+                        <div class="restaurant-info">
+                            <h3>Bombay Special Pav Bhaji</h3>
+                            <div class="tags">Buttery, Mashed Vegetables</div>
+                            <div class="rating">
+                                <span>★</span> 4.8
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dish Card 4: Momos -->
+                    <div class="restaurant-card">
+                        <img src="https://images.unsplash.com/photo-1694923450868-b432a8ee52aa?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                            alt="Steamed Momos">
+                        <div class="restaurant-info">
+                            <h3>Veg Steamed Momos</h3>
+                            <div class="tags">Indo-Chinese, Spicy Chutney</div>
+                            <div class="rating">
+                                <span>★</span> 4.5
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Offers -->
+        <section class="promo-section" id="promos">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin-bottom: 3rem;">Today's <span style="color: var(--foodie-primary);">Street Deals</span></h2>
+                <div class="promo-banners">
+                    <div class="promo-banner">
+                        <span class="icon">🎁</span>
+                        <span class="promo-text">Buy 1, Get 1 FREE on all Chaap rolls!</span>
+                    </div>
+                    <div class="promo-banner">
+                        <span class="icon">🛵</span>
+                        <span class="promo-text" style="color: #4b5563;">Express Delivery FREE on all Indo-Chinese orders.</span>
+                    </div>
+                    <div class="promo-banner">
+                        <span class="icon">🥯</span>
+                        <span class="promo-text">Free Extra Bhaji with every Pav Bhaji order.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonial-section" id="testimonials">
+            <div class="container">
+                <h2 style="font-size: 2rem; margin-bottom: 3rem;">What Our Patrons <span style="color: var(--foodie-primary);">Experience</span></h2>
+                <div class="testimonial-cards">
+                    
+                    <!-- Testimonial Card 1: Arjun S. -->
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1698356253803-838dceb68946?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                            alt="Customer Arjun S.">
+                        <div class="stars">★★★★★</div>
+                        <p>"The Chaap here is unbeatable! Tastes exactly like the authentic street vendor, but delivered so fast."</p>
+                        <div class="name">- Arjun S.</div>
+                    </div>
+
+                    <!-- Testimonial Card 2: Tanya R. -->
+                    <div class="testimonial-card">
+                        <img src="https://plus.unsplash.com/premium_photo-1723568666044-1b066e26b1fb?q=80&w=1921&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                            alt="Customer Tanya R.">
+                        <div class="stars">★★★★★</div>
+                        <p>"I finally found a place that delivers Chole Bhature perfectly hot and fluffy. Highly recommend Veer Ji!"</p>
+                        <div class="name">- Tanya R.</div>
+                    </div>
+
+                    <!-- Testimonial Card 3: Vikram G. -->
+                    <div class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1651390217429-f9f63f775617?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                            alt="Customer Vikram G.">
+                        <div class="stars">★★★★★</div>
+                        <p>"The Momos and Manchurian were delicious and came with the perfect spicy dip. Great experience!"</p>
+                        <div class="name">- Vikram G.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App Download Section -->
+        <section class="download-section" id="download">
+            <div class="container download-container">
+                <!-- App Download Content -->
+                <div class="app-download-content">
+                    <h2 style="font-weight: 700;">Unlock Exclusive Street Food</h2>
+                    <p style="font-weight: 300;">Download the Zomato App for exclusive menus, faster checkouts, and first access to new regional specialties.</p>
+                    <div class="store-buttons">
+                        <!-- Store buttons (Icons/Logos kept for functionality) -->
+                        <a href="#" aria-label="Google Play">
+                            <img src="https://img.icons8.com/color/144/000000/google-play.png" alt="Google Play">
+                        </a>
+                        <a href="#" aria-label="App Store">
+                            <img src="https://img.icons8.com/ios-filled/144/000000/mac-os.png" alt="App Store">
+                        </a>
+                    </div>
+                </div>
+                <!-- App Download Image (Stock Photo: Phone with food app screen) -->
+                <div class="app-download-image">
+                    <img src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-17-pro-model-unselect-gallery-2-202509_GEO_US?wid=5120&hei=2880&fmt=webp&qlt=90&.v=dU9qRExIQUlQTzVKeDd1V1dtUE1MUWFRQXQ2R0JQTk5udUZxTkR3ZVlpTEJBSVhDREVhQVF4eThVb2E3Y2VibUlYUWYrQkRLNitCbE9QRVRqNHErMkE3b3pFWnhZZ2g0M0pRR0pEdHVSRUVtYkFqYmVJbENIK1gycDVvVjJtTEZkWHlyQUZHM0VoZTBZR3diWjJXVERn&traceId=1" 
+                        alt="App Preview">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-grid">
+                
+                <div class="footer-col">
+                    <h4 style="color: var(--foodie-primary); font-weight: 800;">Veer Ji Malai Chaap Wale</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">For Partners</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Popular Zones</h4>
+                    <ul>
+                        <li>Delhi</li>
+                        <li>Mumbai</li>
+                        <li>Bangalore</li>
+                        <li>Kolkata</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li>Email: <a href="mailto:support@veerji.com">support@veerji.com</a></li>
+                        <li>Phone: <a href="tel:+918765409234">+91 876 540 9234</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">🌐</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📸</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Foodie, Inc. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
