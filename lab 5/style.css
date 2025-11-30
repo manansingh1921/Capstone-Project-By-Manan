@@ -1,0 +1,729 @@
+/* 1. Global Setup and Variables */
+:root {
+    --foodie-primary: #dc143c;
+    /* Crimson Red */
+    --foodie-dark: #8B0000;
+    /* Dark Maroon */
+    --foodie-accent: #FFE5B4;
+    /* Soft Peach */
+    --max-width: 1280px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fcfcfc;
+    color: #1f2937;
+    margin: 0;
+    line-height: 1.5;
+    text-align: center;
+    /* Default text center for mobile/small screens */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.15s ease-in-out;
+}
+
+h1,
+h2,
+h3 {
+    color: #1f2937;
+    font-weight: 800;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* 2. Navbar & Header */
+header {
+    /* KEY STYLES FOR STICKY NAVIGATION */
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.header-content {
+    /* KEY STYLES FOR FLEXBOX ALIGNMENT */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.875rem;
+    /* 3xl */
+    font-weight: 800;
+    color: var(--foodie-primary);
+    letter-spacing: 0.05em;
+}
+
+/* Desktop Navigation (Hidden by default on mobile) */
+.desktop-nav,
+.auth-buttons-desktop {
+    display: none;
+}
+
+/* Mobile Navigation (Always visible, simple list) */
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 1rem;
+    gap: 0.5rem;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav-item,
+.mobile-nav-btn {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.mobile-nav-item:hover {
+    background-color: rgba(255, 229, 180, 0.5);
+    /* foodie-accent/50 */
+}
+
+.mobile-nav-btn {
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.mobile-nav .login-btn {
+    border: 2px solid var(--foodie-dark);
+    color: var(--foodie-dark);
+}
+
+.mobile-nav .signup-btn {
+    background-color: var(--foodie-primary);
+    color: white;
+}
+
+/* 3. Hero Section */
+.hero-section {
+    background-color: rgba(255, 229, 180, 0.4);
+    padding: 4rem 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.hero-content {
+    order: 2;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content h1 span {
+    color: var(--foodie-primary);
+}
+
+.hero-content p {
+    font-size: 1.125rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn {
+    padding: 1rem 2.5rem;
+    background-color: var(--foodie-primary);
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    border-radius: 9999px;
+    box-shadow: 0 20px 25px -5px rgba(220, 20, 60, 0.5);
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.cta-btn:hover {
+    background-color: var(--foodie-dark);
+}
+
+.hero-image {
+    order: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 28rem;
+    height: auto;
+    border-radius: 1.5rem;
+    object-fit: cover;
+    box-shadow: 0 20px 25px -5px rgba(107, 114, 128, 0.4);
+    border: 4px solid white;
+}
+
+/* 4. Search Bar */
+.search-bar-wrapper {
+    max-width: 80rem;
+    margin: -2.5rem auto 4rem;
+    padding: 0 1rem;
+}
+
+.search-form {
+    background-color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid #f3f4f6;
+}
+
+.search-form input,
+.search-form select,
+.search-form button {
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    font-size: 1.125rem;
+    transition: border-color 0.15s;
+}
+
+.search-form input:focus,
+.search-form select:focus {
+    border-color: var(--foodie-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.3);
+}
+
+.search-form .search-btn {
+    background-color: var(--foodie-dark);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.search-form .search-btn:hover {
+    background-color: var(--foodie-primary);
+}
+
+/* 5. Category Grid */
+.category-section {
+    padding: 4rem 0;
+}
+
+.category-section h2 span {
+    color: var(--foodie-primary);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.category-card {
+    background-color: white;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--foodie-primary);
+    transition: box-shadow 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+}
+
+.category-card .icon-emoji {
+    font-size: 3.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.category-card span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+/* 6. Featured Restaurants */
+.restaurant-section {
+    padding: 4rem 0;
+    background-color: #f9fafb;
+}
+
+.restaurant-section h2 span {
+    color: var(--foodie-primary);
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.restaurant-card {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid rgba(255, 229, 180, 0.5);
+    transition: box-shadow 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.restaurant-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 11rem;
+    object-fit: cover;
+}
+
+.restaurant-info {
+    padding: 1.25rem;
+    text-align: left;
+}
+
+.restaurant-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.restaurant-info .tags {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.restaurant-info .rating {
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--foodie-dark);
+}
+
+.restaurant-info .rating span {
+    margin-right: 0.25rem;
+}
+
+/* 7. Promo Offers */
+.promo-section {
+    padding: 4rem 0;
+}
+
+.promo-section h2 span {
+    color: var(--foodie-primary);
+}
+
+.promo-banners {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.promo-banner {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.promo-banners>div:first-child {
+    background-color: var(--foodie-accent);
+    border: 1px solid rgba(139, 0, 0, 0.2);
+}
+
+.promo-banners>div:first-child .promo-text {
+    color: var(--foodie-dark);
+}
+
+.promo-banners>div:nth-child(2) {
+    background-color: white;
+    border-left: 8px solid var(--foodie-primary);
+}
+
+.promo-banners>div:nth-child(3) {
+    background-color: var(--foodie-dark);
+}
+
+.promo-banners>div:nth-child(3) .promo-text {
+    color: white;
+}
+
+.promo-banner .icon {
+    font-size: 1.875rem;
+}
+
+.promo-banner .promo-text {
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+/* 8. Testimonials */
+.testimonial-section {
+    padding: 4rem 0;
+    background-color: rgba(255, 229, 180, 0.2);
+}
+
+.testimonial-section h2 span {
+    color: var(--foodie-primary);
+}
+
+.testimonial-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 4px solid var(--foodie-dark);
+}
+
+.testimonial-card img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 9999px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid var(--foodie-primary);
+}
+
+.testimonial-card .stars {
+    color: var(--foodie-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-card p {
+    color: #4b5563;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.testimonial-card .name {
+    font-weight: 700;
+    color: #1f2937;
+}
+
+/* 9. App Download Section */
+.download-section {
+    padding: 5rem 0;
+    background-color: var(--foodie-primary);
+    color: white;
+}
+
+.download-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.app-download-content {
+    text-align: center;
+}
+
+.app-download-content h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.app-download-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.store-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.store-buttons img {
+    width: 9rem;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.store-buttons img:hover {
+    transform: scale(1.05);
+}
+
+.app-download-image {
+    display: flex;
+    justify-content: center;
+}
+
+.app-download-image img {
+    width: 10rem;
+    height: auto;
+    border-radius: 0.75rem;
+    transform: rotate(3deg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* 10. Footer */
+footer {
+    background-color: #111827;
+    color: #d1d5db;
+    padding: 3rem 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    border-bottom: 1px solid #374151;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.footer-col h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.footer-col h4:first-child {
+    color: var(--foodie-primary);
+    font-weight: 800;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.footer-col a:hover {
+    color: var(--foodie-accent);
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
+.footer-social a:hover {
+    color: var(--foodie-primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* 11. Media Queries (Desktop/Tablet adjustments) */
+@media (min-width: 640px) {
+
+    /* sm breakpoint */
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-form {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+
+    /* md breakpoint */
+    body {
+        text-align: initial;
+    }
+
+    .header-content {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    /* Hide mobile navigation elements */
+    .mobile-nav {
+        display: none;
+    }
+
+    /* Show desktop navigation elements, using flexbox */
+    .desktop-nav,
+    .auth-buttons-desktop {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        text-align: initial;
+    }
+
+    .desktop-nav {
+        gap: 2rem;
+    }
+
+    .auth-buttons-desktop {
+        gap: 0.75rem;
+    }
+
+    .auth-buttons-desktop button {
+        padding: 0.5rem 1.25rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        transition: background-color 0.15s, transform 0.15s;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .auth-buttons-desktop .login-btn {
+        border: 2px solid var(--foodie-dark);
+        color: var(--foodie-dark);
+    }
+
+    .auth-buttons-desktop .login-btn:hover {
+        background-color: #fef2f2;
+    }
+
+    .auth-buttons-desktop .signup-btn {
+        background-color: var(--foodie-primary);
+        color: white;
+        box-shadow: 0 10px 15px -3px rgba(220, 20, 60, 0.3);
+    }
+
+    .auth-buttons-desktop .signup-btn:hover {
+        background-color: var(--foodie-dark);
+    }
+
+    .hero-section {
+        padding: 7rem 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: left;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-image {
+        order: 2;
+        justify-content: flex-end;
+    }
+
+    .hero-content p {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .search-form {
+        flex-direction: row;
+        gap: 1.5rem;
+        align-items: stretch;
+    }
+
+    .search-form select {
+        width: 25%;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .promo-banners {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonial-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .download-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .app-download-content {
+        text-align: left;
+    }
+
+    .store-buttons {
+        justify-content: flex-start;
+    }
+
+    .app-download-image {
+        justify-content: flex-end;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* lg breakpoint */
+    .hero-content h1 {
+        font-size: 3.75rem;
+    }
+
+    .restaurant-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
